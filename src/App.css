@@ -1,38 +1,142 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.App h3{
+  margin-top: 75px;
 }
 
-.App-link {
-  color: #61dafb;
+.iconDiv{
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.close {
+   position: relative;
+   display: inline-block;
+   width: 50px;
+   height: 50px;
+   filter: drop-shadow(0px 40px 20px rgb(58,123,246));
+}
+
+ .close::before, .close::after {
+   content: '';
+   position: absolute;
+   height: 2px;
+   width: 100%;
+   top: 50%;
+   left: 0;
+   margin-top: -1px;
+
+}
+.close.heavy::before, .close.heavy::after {
+   height: 18px;
+   margin-top: -6px;
+}
+.close::before {
+    -webkit-transform: rotate(
+45deg
+);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+        background-image: linear-gradient(rgb(58,123,246) 0%, rgb(58,123,246) 100%);
+
+
+}
+.close::after {
+    -webkit-transform: rotate(
+-45deg
+);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+        background-image: linear-gradient(to right, rgb(58,123,246) 50%, rgb(18, 216, 250) 90%);
+
+}
+
+/*.loader {
+  background: #fff;
+  background-clip: padding-box;
+  border: 15px solid transparent;
+  border-radius: 50%;
+   width: 45px;
+    height: 45px;
+     position: relative;
+  
+
+}
+  .loader:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: 15px;
+    border-radius: inherit; 
+          background: linear-gradient(to right, rgb(253,116,54) 50%, rgb(238, 168, 73) 90%);
+  }*/
+  .loaderBox{
+    padding-top: 2px;
+          filter: drop-shadow(0px 40px 20px rgb(253,116,54));
+
   }
-  to {
-    transform: rotate(360deg);
+.loader {
+  
+   width: 50px;
+   height: 50px;
+   position: relative;
+   box-sizing: border-box;
+   color: #fff;
+   background: #fff;
+   background-clip: padding-box;
+  /* !importanté */
+   border: solid 16px transparent;
+  /* !importanté */
+   border-radius: 50%;
+   margin-left: 10px;
+
+
+}
+ .loader:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: -1;
+   margin: -16px;
+  /* !importanté */
+   border-radius: inherit;
+  /* !importanté */
+   background: linear-gradient(to right, rgb(253,116,54) 30%, rgb(255, 183, 94) 80%);
+}
+
+.friendButton,.aiButton {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
   }
+.friendButton{
+  color: #000;
+  background-color: #fff;
+}
+.aiButton{
+  color: #fff;
+  background-color: rgb(58,123,246);
 }
